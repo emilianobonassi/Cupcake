@@ -412,7 +412,7 @@ where
     T: SuperTrait<T>,
 {
     fn generate_key(&self) -> SecretKey<T> {
-        let mut skpoly = randutils::sample_ternary_poly(self.context.clone());
+        let mut skpoly = randutils::sample_ternary_poly_prng(self.context.clone());
         if self.context.is_ntt_enabled {
             skpoly.forward_transform();
         }
