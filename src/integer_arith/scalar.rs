@@ -367,7 +367,7 @@ impl Scalar {
     }
 
     fn _inv_mod(a: &Scalar, q: u64) -> Self {
-        Scalar::new(modinverse(a.rep as i128, q as i128).unwrap() as u64)
+        Scalar::new(modinverse(a.rep as i64, q as i64).unwrap() as u64)
     }
 
     fn _barret_multiply(a: &Scalar, b: &Scalar, ratio: (u64, u64), q: u64) -> u64 {
